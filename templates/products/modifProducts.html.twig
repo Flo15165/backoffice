@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+	<h2>{{h2}}</h2>
+
+{% endblock %}
+{% block formulaire %}
+
+
+	
+
+
+	<form action="/products/update" method="post">
+		<fieldset>
+			<legend>{{ product['name'] }}</legend>
+
+
+			<input type="hidden" id="id" name="id" value='{{product['id']}}'>
+			<div class="mb-3">
+				<label for="price" class="form-label">Price</label>
+				<input type="float" class="form-control" id="price" name="price" value='{{product['price']}}' >
+			</div>
+			<div class="mb-3">
+				<label for="quantity" class="form-label"> Quantity</label>
+				<input type="float" class="form-control" id="quantity" name="quantity" value='{{product['quantity']}}'>
+			</div>
+			<button type="submit" class="btn btn-primary">Valider</button>
+		</fieldset>
+	</form>
+
+	{% endblock %}

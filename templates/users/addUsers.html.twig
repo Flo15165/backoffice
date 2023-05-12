@@ -1,0 +1,55 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+
+{{title}}
+
+{% endblock %}
+
+{% block content %}
+
+<h2>{{h2}}</h2>
+
+{% endblock %}
+
+
+{% block formulaire %}
+
+
+<form action="/users/modify" method="post">
+		<fieldset>
+
+
+			<input type="hidden" id="id" name="id" value='{{user['id']}}'>
+			<div class="mb-3">
+				<label for="first_name" class="form-label">Prénom</label>
+				<input type="text" class="form-control" id="first_name" name="first_name" value='{{user['first_name']}}' >
+			</div>
+			<div class="mb-3">
+				<label for="last_name" class="form-label">Nom</label>
+				<input type="text" class="form-control" id="last_name" name="last_name" value='{{user['last_name']}}'>
+			</div>
+            <div class="mb-3">
+				<label for="username" class="form-label">Nom d'utilisateur</label>
+				<input type="text" class="form-control" id="username" name="username" value='{{user['username']}}'>
+			</div>
+            <div class="mb-3">
+				<label for="password" class="form-label">Mot de passe</label>
+				<input type="text" class="form-control" id="password" name="password" value='{{user['password']}}'>
+			</div>
+            <div class="mb-3">
+				<label for="budget" class="form-label">Budget</label>
+				<input type="number" class="form-control" id="budget" name="budget" value='{{user['budget']}}'>
+			</div>
+            <div class="mb-3">
+				<label for="is_admin" class="form-label">Admin</label>
+				<input type="number" class="form-control" id="is_admin" name="is_admin" value='{{user['is_admin']}}'>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Valider</button>
+		</fieldset>
+	</form>
+
+
+
+{% endblock %}

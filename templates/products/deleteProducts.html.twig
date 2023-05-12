@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+
+{{title}}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<h2>{{h2}}</h2>
+<p>Etes vous sûr de vouloir supprimer le produit suivant : "{{product.name}}" ?</p>
+
+{% endblock %}
+
+{% block formulaire %}
+
+
+<form action="/products/delete" method="post">
+		<fieldset>
+
+<input type="hidden" id="id" name="id" value='{{product.id}}'>
+			<button type="submit" class="btn btn-primary">Valider</button>
+		</fieldset>
+	</form>
+
+	<form action="/products" method='post'>
+	
+	<button type="submit" class="btn btn-secondary">Annuler</button>
+	</form>
+
+
+
+
+
+{% endblock %}
